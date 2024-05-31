@@ -11,7 +11,6 @@ body {
     background-color: rgba(35, 61, 77, 1);
     color: rgba(251, 245, 243, 1);
     font-family: 'Nunito';
-    height: 100%;
     width: 100%;
 }
 
@@ -22,7 +21,6 @@ body {
     align-items: center;
     margin: 2.25rem auto;
     justify-content: center;
-   /*  height: 100%; */
     width: 80%;
 }
 
