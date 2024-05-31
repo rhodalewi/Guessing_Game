@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 10px;
+    background-color: rgba(35, 61, 77, 1);
+    color: rgba(251, 245, 243, 1);
+    font-family: 'Nunito';
+    height: 100%;
+    width: 100%;
+}
+
+  /* HOMEPAGE STYLE */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.25rem auto;
+    justify-content: center;
+   /*  height: 100%; */
+    width: 80%;
+}
+
+h1  {
+    font-size: 4rem;
+    font-family: 'Oswald';
+    color: rgba(252, 202, 70, 1);
+    text-align: center;
+}
+
+h2{
+    font-size: 2.5rem;
+    color: rgba(252, 202, 70, 1);
+    margin-top: 2rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+ul li{
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    padding-left: 2rem;
+    list-style-image: url(./img/Bullet\ point\ desktop.svg);
+}
+
+strong {
+    color: rgba(252, 202, 70, 1);
+}
+
+.homepage-bottom {
+    color: rgba(252, 202, 70, 1);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.playBtn {
+    padding: 1rem 4.5rem;
+    border-radius: 12px;
+    background-color: rgba(228, 74, 18);
+    /* background-color: rgb(0, 168, 107); */
+    border: none;
+    color:  rgba(251, 245, 243, 1);
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Nunito';
+    filter: drop-shadow(2px 4px  rgba(150, 50, 14, 0.507));
+    margin-top: 1.25rem;
+}
+
+.playBtn:hover,
+.guessBtn:hover {
+    background-color: rgb(241, 119, 74);
+    filter: drop-shadow(2px 4px rgba(153, 67, 9, 0.568));
+}
+.playBtn:focus,
+.guessBtn:focus {
+    background-color: rgb(241, 119, 74);
+    filter: drop-shadow(2px 4px rgba(153, 67, 9, 0.568));
+}
+
+  /* GAME PAGE SCREEN STYLE */
+
+.gameContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    padding: 2rem 0 2.5rem;
+}
+
+
+.attempts {
+    font-size: 1.25rem;
+    padding-top: 0.75rem;
+}
+
+.attemptsLeft {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: rgba(252, 202, 70, 1);
+}
+
+.inputs {
+    width: 360px;
+    height: 60px;
+    padding: 0 1.25rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 34, 1);
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    font-family: 'Nunito';
+    font-weight: 700;
+    background-color: rgba(251, 245, 243, 1);
+}
+
+.inputs:focus {
+  outline: 2px solid rgb(241, 119, 74);
+}
+
+.inputs::placeholder {
+    font-size: 1.1rem;
+}
+
+.guessBtn {
+    padding: 1rem 9rem;
+    border-radius: 12px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: rgba(251, 245, 243, 1);
+    background-color: rgba(228, 74, 18);
+    font-family: 'Nunito';
+    filter: drop-shadow(2px 4px  rgba(150, 50, 14, 0.507));
+    border: none;
+    cursor: pointer;
+    margin-top: 1.25rem;
+}
+
+.back {
+    background: transparent;
+    margin-top: 1.25rem;
+    padding: 1.25rem 7.75rem;
+    border: 1.8px solid rgba(228, 74, 18);
+    border-radius: 8px;
+    color: inherit;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.back:hover,
+.back:focus  {
+    background-color: rgb(241, 119, 74);
+    filter: drop-shadow(2px 4px rgba(153, 67, 9, 0.568));
+    border: none;
+}
+
+.resultMessage {
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding-top: 0.75rem;
+    color: greenyellow;
+}
+
+
+/* Media Queries for Responsiveness */
+
+@media only screen and(min-width: 800px) and (max-width: 1440px) {
+    .container {
+        width: 100%;
+        height: 100%;
+    }
+} 
+
+@media screen and (max-width: 768px) and (min-width: 375px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .container {
+        width: 80%;
+        margin: 2.25rem  auto;
+        height: fit-content;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+        letter-spacing: 0.1rem;
+        text-align: left;
+        margin-bottom: 1rem;
+    }
+
+    ul li {
+        list-style-image: url(./img/Bullet\ point\ mobile.svg);
+        font-size: 0.75rem;
+        padding-left: 0.75rem;
+        margin-top: 0.75rem;
+    }
+
+    .homepage-bottom {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+
+    .playBtn {
+        padding: 0.75rem 2.25rem;
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+        letter-spacing: 0;
+    }
+
+    .attempts {
+        font-size: 0.75rem;
+        padding-top: 0.5rem;
+    }
+
+    .attemptsLeft {
+        font-size: 0.75rem;
+    }
+
+    .inputs {
+        width: 200px;
+        height: 48px;
+        padding: 0.75rem ;
+        font-size: 1.25rem;
+    }
+
+    .inputs::placeholder {
+        font-size: 1rem;
+    }
+
+    .guessBtn {
+        padding: 0.9rem 4.75rem;
+        font-size: 1.15rem;
+        margin-top: 0.75rem;
+    }
+
+    .back {
+        padding: 0.75rem 3.75rem;
+        font-size: 1rem;
+    }   
+
+    .resultMessage {
+        font-size: 0.75rem;
+
+    }
+}
