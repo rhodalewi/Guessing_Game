@@ -10,14 +10,20 @@
 
 <body class="gameContainer">
     <div class="container">
+        <div class="backLink">
+            <a href="./index.html" class="back">Back</a>
+        </div>
+       
         <h1>Can You Guess A Number?</h1>
-        <h3>Guess a number between 1 and 100</h3>
+        <h3>Guess a number between 1 to 100</h3>
         <p class="attempts">No. of attempts: <strong>3</strong></p>
         <p class="attempts">No. of attempts left: <span class="attemptsLeft">3</span></p>
-        <input type="number" placeholder="Enter your guess " class="inputs">
-        <p class="resultMessage"></p>
-        <button class="guessBtn" type="submit">Guess</button>
-        <a href="./index.html" class="back">Instructions</a>
+        <form class="form">
+            <input type="text" placeholder="Enter your guess " class="inputs">
+            <p class="resultMessage"></p>
+            <button class="guessBtn" type="submit">Guess</button>
+            <button type="reset" class="resetBtn">Reset</button>
+        </form>
     </div>
 </body>
 </html>

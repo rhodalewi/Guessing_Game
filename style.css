@@ -13,6 +13,7 @@ body {
     font-family: 'Nunito';
     height: 100%;
     width: 100%;
+    min-width: 320px;
 }
 
   /* HOMEPAGE STYLE */
@@ -20,30 +21,32 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2.25rem auto;
     justify-content: center;
+    margin: 0 auto;
     width: 80%;
+    height: 100vh;
 }
 
 h1  {
-    font-size: 4rem;
+    font-size: 2.75rem;
     font-family: 'Oswald';
     color: rgba(252, 202, 70, 1);
     text-align: center;
 }
 
 h2{
-    font-size: 2.5rem;
+    font-size: 1.75rem;
     color: rgba(252, 202, 70, 1);
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     letter-spacing: 0.2rem;
     text-align: center;
     font-weight: 600;
 }
 
 ul li{
-    font-size: 1.5rem;
-    margin-top: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-top: 1.5rem;
     padding-left: 2rem;
     list-style-image: url(./img/Bullet\ point\ desktop.svg);
 }
@@ -54,31 +57,34 @@ strong {
 
 .homepage-bottom {
     color: rgba(252, 202, 70, 1);
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 600;
     margin-top: 2.5rem;
     text-align: center;
+
 }
 
 .playBtn {
-    padding: 1rem 4.5rem;
-    border-radius: 12px;
+    padding: 0.75rem 3rem;
+    border-radius: 20px;
     background-color: rgba(228, 74, 18);
     border: none;
     color:  rgba(251, 245, 243, 1);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
     cursor: pointer;
     font-family: 'Nunito';
     filter: drop-shadow(2px 4px  rgba(150, 50, 14, 0.507));
     margin-top: 1.25rem;
+    transition: all 0.6s ease-in-out;
 }
 
 .playBtn:hover,
 .guessBtn:hover {
-    background-color: rgb(241, 119, 74);
+    opacity: 0.8;
     filter: drop-shadow(2px 4px rgba(153, 67, 9, 0.568));
 }
+
 .playBtn:focus,
 .guessBtn:focus {
     background-color: rgb(241, 119, 74);
@@ -91,35 +97,39 @@ strong {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    position: relative;
 }
 
 h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 0.1rem;
-    padding: 2rem 0 2.5rem;
+    margin: 2.5rem 0 1rem;
 }
 
-
 .attempts {
-    font-size: 1.25rem;
-    padding-top: 0.75rem;
+    font-size: 1rem;
 }
 
 .attemptsLeft {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 700;
     color: rgba(252, 202, 70, 1);
 }
 
+.form {
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .inputs {
-    width: 360px;
-    height: 60px;
+    height: 52px;
     padding: 0 1.25rem;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 34, 1);
-    font-size: 1.5rem;
-    margin-top: 1.25rem;
+    font-size: 1rem;
     font-family: 'Nunito';
     font-weight: 700;
     background-color: rgba(251, 245, 243, 1);
@@ -130,13 +140,17 @@ h3 {
 }
 
 .inputs::placeholder {
-    font-size: 1.1rem;
+    font-size: 1rem;
+}
+
+.inputs:disabled {
+    background-color: rgb(219, 214, 212);
 }
 
 .guessBtn {
-    padding: 1rem 9rem;
+    padding: 0.75rem 0;
     border-radius: 12px;
-    font-size: 1.75rem;
+    font-size: 1.125rem;
     font-weight: 700;
     color: rgba(251, 245, 243, 1);
     background-color: rgba(228, 74, 18);
@@ -144,59 +158,73 @@ h3 {
     filter: drop-shadow(2px 4px  rgba(150, 50, 14, 0.507));
     border: none;
     cursor: pointer;
-    margin-top: 1.25rem;
+    transition: all 0.6s ease-in-out;
 }
 
-.back {
-    background: transparent;
-    margin-top: 1.25rem;
-    padding: 1.25rem 7.75rem;
-    border: 1.8px solid rgba(228, 74, 18);
-    border-radius: 8px;
-    color: inherit;
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.back:hover,
-.back:focus  {
+.guessBtn:disabled {
     background-color: rgb(241, 119, 74);
-    filter: drop-shadow(2px 4px rgba(153, 67, 9, 0.568));
+}
+
+.resetBtn {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color:rgba(228, 74, 18);
+    background-color: transparent;
+    align-self: center;
     border: none;
+    transition: all 0.6s ease-in-out;
+}
+
+.resetBtn:hover,
+.resetBtn:focus  {
+    color: rgba(251, 245, 243, 1);
+    text-decoration: underline;
 }
 
 .resultMessage {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: 500;
-    padding-top: 0.75rem;
     color: greenyellow;
+    text-align: center;
+    display: none;
+    text-wrap: nowrap;
 }
 
+.backLink {
+    width: 100%;
+    display: flex;
+}
+
+.back {
+    font-size: 1rem;
+    color:rgba(153, 67, 9, 0.568);
+    text-decoration: none;
+    padding: 0.5rem 1.75rem;
+    border-radius: 12px;
+    background-color: rgba(251, 245, 243, 1);
+    box-shadow: 2px 4px rgba(153, 67, 9, 0.568);
+    transition: all 0.6s ease-in-out;
+}
+
+.back:hover {
+    background-color: rgb(241, 119, 74);
+    color: rgba(251, 245, 243, 1);
+    scale: 0.92;
+}
 
 /* Media Queries for Responsiveness */
-
 @media screen and (max-width: 481px) {
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
     .container {
-        margin: 2.25rem  3rem;
-        height: fit-content;
-        width: 80%;
+        width: 76%;
     }
 
     h1 {
-        font-size: 1.75rem;
-        text-align: center;
+        font-size: 1.5rem;
     }
 
     h2 {
         font-size: 1.25rem;
         letter-spacing: 0.1rem;
-        text-align: left;
         margin-bottom: 1rem;
     }
 
@@ -205,10 +233,11 @@ h3 {
         font-size: 0.75rem;
         padding-left: 0.75rem;
         margin-top: 0.75rem;
+        line-height: 1.25rem;
     }
 
     .homepage-bottom {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         margin-top: 1rem;
     }
 
@@ -225,16 +254,19 @@ h3 {
 
     .attempts {
         font-size: 0.75rem;
-        padding-top: 0.5rem;
     }
 
     .attemptsLeft {
         font-size: 0.75rem;
     }
 
+    .form {
+        margin-top: 1rem;
+        width: 220px;
+    }
+
     .inputs {
-        width: 200px;
-        height: 48px;
+        height: 44px;
         padding: 0.75rem ;
         font-size: 1.25rem;
     }
@@ -243,38 +275,38 @@ h3 {
         font-size: 1rem;
     }
 
-    .guessBtn {
-        padding: 0.9rem 4.75rem;
-        font-size: 1.15rem;
-        margin-top: 0.75rem;
+    .backLink {
+        justify-content: center;
+        margin-bottom: 2rem;
+       
     }
 
     .back {
-        padding: 0.75rem 3.75rem;
         font-size: 1rem;
-    }   
+         background-color: transparent;
+         box-shadow: none;
+         color: rgba(251, 245, 243, 1);
+    }  
+    
+    .back:hover {
+        text-decoration: underline;
+        background-color: transparent;
+        color: rgb(241, 119, 74);
+        scale: 1;
+    }
 
     .resultMessage {
         font-size: 0.75rem;
-
     }
 }
 
 @media screen and (min-width: 482px) and (max-width: 768px) {
-    body {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
     .container {
-        margin: 3.5rem  3rem;
-        height: 100%;
         width: 80%;
     }
 
     h1 {
-        font-size: 1.75rem;
-        text-align: center;
+        font-size: 2.25rem;
     }
 
     h2 {
@@ -288,11 +320,12 @@ h3 {
         font-size: 0.75rem;
         padding-left: 0.75rem;
         margin-top: 0.75rem;
+        line-height: 1.5rem;
     }
 
     .homepage-bottom {
-        font-size: 1.1rem;
-        margin-top: 1rem;
+        font-size: 1.25rem;
+        margin-top: 1.75rem;
     }
 
     .playBtn {
@@ -301,14 +334,13 @@ h3 {
     }
 
     h3 {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         letter-spacing: 0;
         text-align: center;
     }
 
     .attempts {
         font-size: 0.75rem;
-        padding-top: 0.5rem;
     }
 
     .attemptsLeft {
@@ -316,26 +348,15 @@ h3 {
     }
 
     .inputs {
-        width: 200px;
+        width: 220px;
         height: 48px;
         padding: 0.75rem ;
-        font-size: 1.25rem;
-    }
-
-    .inputs::placeholder {
-        font-size: 1rem;
     }
 
     .guessBtn {
         padding: 0.9rem 4.75rem;
         font-size: 1.15rem;
-        margin-top: 0.75rem;
     }
-
-    .back {
-        padding: 0.75rem 3.75rem;
-        font-size: 1rem;
-    }   
 
     .resultMessage {
         font-size: 0.75rem;
